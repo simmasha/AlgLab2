@@ -1,9 +1,11 @@
 name: test
 on: 
-  push:
-    branches:
-      - '*'
   workflow_dispatch:
+    inputs:
+      description: 'data'
+      default: '4 2 2 6 8 5 4 9 10 4 0 11 6 8 2 12 12 5 2 2 12 12 10 4 5 5 2 10'
+      required: true
+      
   
 jobs:
   build:
@@ -22,14 +24,4 @@ jobs:
       
       - name: Build application
         run: |
-          python main.py 4
-            2 2 6 8
-            5 4 9 10
-            4 0 11 6
-            8 2 12 12
-            5
-            2 2
-            12 12
-            10 4
-            5 5
-            2 10
+          python main.py 
