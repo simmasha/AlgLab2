@@ -25,4 +25,4 @@ jobs:
       
       - name: Build application
         run: |
-          python main.py 
+          python main.py ${{ github.event.inputs.data }}
